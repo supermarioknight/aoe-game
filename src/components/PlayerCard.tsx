@@ -4,7 +4,7 @@ type Props = {
     player: Player;
 }
 export function PlayerCard({ player }: Props) {
-    return <div className="w-60 border">
+    return <div id="player-card" className="w-60 border">
         Player Card
     </div>
 }
