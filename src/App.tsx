@@ -57,7 +57,7 @@ function App() {
       <div className='mt-4'>
         <Title level={2}>Overview</Title>
 
-        <Row>
+        <Row gutter={[16, 16]}>
           {players.map((player) => (
             <Col span={5} key={player.playerName}>
               <PlayerCard
