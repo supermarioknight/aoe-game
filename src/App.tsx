@@ -59,7 +59,7 @@ function App() {
 
         <Row>
           {players.map((player) => (
-            <Col span={8} key={player.playerName}>
+            <Col span={5} key={player.playerName}>
               <PlayerCard
 
               />
