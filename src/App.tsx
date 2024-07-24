@@ -3,21 +3,22 @@ import { Player } from './interfaces/Player.interface';
 import { fetchPlayers } from './services/playerService';
 import { DetailsCard } from './components/DetailsCard';
 import { Controls } from './components/Controls';
-import { Col, Row } from 'antd';
+import { Col, Row, Skeleton } from 'antd';
 import Title from 'antd/es/typography/Title';
 import { PlayerCard } from './components/PlayerCard.tsx';
 
 
 function App() {
   const [players, setPlayers] = useState<Player[]>([]);
+  const [loading, setLoading] = useState(false);
   const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null);
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
   useEffect(() => {
+    setLoading(true);
     fetchPlayers().then(res => {
-      console.log(res);
       setPlayers(res)
-    });
+    }).finally(() => setLoading(false));
   }, []);
 
   const handlePlayerSelect = (player: Player) => {
@@ -57,7 +58,9 @@ function App() {
       <div className='mt-4'>
         <Title level={2}>Overview</Title>
 
-        <Row gutter={[16, 16]}>
+        {loading ? (
+          <Skeleton />
+        ) : <Row gutter={[16, 16]}>
           {players.map((player) => (
             <Col span={8} key={player.playerName}>
               <PlayerCard
@@ -67,7 +70,7 @@ function App() {
               />
             </Col>
           ))}
-        </Row>
+        </Row>}
 
       </div>
     </div>
