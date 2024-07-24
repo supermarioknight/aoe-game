@@ -5,7 +5,7 @@ type Props = {
     player: Player;
 }
 export function PlayerCard({ player }: Props) {
-    return <div id="player-card" className="w-32 border p-3 rounded-md shadow-md">
+    return <div id="player-card" className="w-40 border p-3 rounded-md shadow-md">
         <Paragraph
             ellipsis={{
                 rows: 1,
