@@ -4,10 +4,13 @@ import { Player } from "../interfaces/Player.interface"
 type Props = {
     player: Player;
     isActive?: boolean;
-    onClick?: () => void;
-}
-export function PlayerCard({ player, isActive, onClick }: Props) {
-    return <div id="player-card" className={`w-40 border p-3 rounded-md shadow-md hover:cursor-pointer hover:bg-gray-100 ${isActive ? 'bg-gray-100' : ''}`}>
+} & React.ComponentProps<'div'>
+export function PlayerCard({ player, isActive, ...props }: Props) {
+    return <div
+        id="player-card"
+        className={`w-40 border p-3 rounded-md shadow-md hover:cursor-pointer hover:bg-gray-100 ${isActive ? 'bg-gray-100' : ''}`}
+        {...props}
+    >
         <Paragraph
             ellipsis={{
                 rows: 1,
