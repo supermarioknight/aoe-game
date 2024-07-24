@@ -6,7 +6,7 @@ type Props = {
     isActive?: boolean;
 }
 export function PlayerCard({ player, isActive }: Props) {
-    return <div id="player-card" className={"w-40 border p-3 rounded-md shadow-md hover:cursor-pointer hover:bg-gray-100"}>
+    return <div id="player-card" className={`w-40 border p-3 rounded-md shadow-md hover:cursor-pointer hover:bg-gray-100 ${isActive ? 'bg-gray-100' : ''}`}>
         <Paragraph
             ellipsis={{
                 rows: 1,
