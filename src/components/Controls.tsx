@@ -1,5 +1,10 @@
 import { Button, Card } from "antd";
 
+type Props = {
+    onSort: (order: 'asc' | 'desc') => void;
+    onSubmit: () => void;
+}
+
 export function Controls() {
 
     return <Card className="!shadow-md" title="Controls" style={{ minHeight: 300 }}>
