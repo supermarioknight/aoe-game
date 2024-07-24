@@ -6,7 +6,7 @@ type Props = {
 }
 export function DetailsCard({ player }: Props) {
 
-    return <Card title="Details" bordered={false} style={{ height: 300 }}>
+    return <Card title="Details" bordered={false} style={{ minHeight: 300 }}>
         {player ? <div>
             Players Detail
         </div> : null}
