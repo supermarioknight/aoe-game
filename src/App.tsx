@@ -61,7 +61,7 @@ function App() {
           {players.map((player) => (
             <Col span={5} key={player.playerName}>
               <PlayerCard
-
+                player={player}
               />
             </Col>
           ))}
