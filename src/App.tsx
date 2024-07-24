@@ -62,6 +62,8 @@ function App() {
             <Col span={8} key={player.playerName}>
               <PlayerCard
                 player={player}
+                onClick={() => handlePlayerSelect(player)}
+                isActive={player.playerName === selectedPlayer?.playerName}
               />
             </Col>
           ))}
