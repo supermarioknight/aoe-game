@@ -5,6 +5,7 @@ import { DetailsCard } from './components/DetailsCard';
 import { Controls } from './components/Controls';
 import { Col, Row } from 'antd';
 import Title from 'antd/es/typography/Title';
+import { PlayerCard } from './components/PlayerOverview';
 
 
 function App() {
@@ -55,6 +56,17 @@ function App() {
 
       <div className='mt-4'>
         <Title level={2}>Overview</Title>
+
+        <Row>
+          {players.map((player) => (
+            <Col span={8} key={player.playerName}>
+              <PlayerCard
+
+              />
+            </Col>
+          ))}
+        </Row>
+
       </div>
     </div>
 
