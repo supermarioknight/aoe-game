@@ -5,7 +5,7 @@ import { DetailsCard } from './components/DetailsCard';
 import { Controls } from './components/Controls';
 import { Col, Row } from 'antd';
 import Title from 'antd/es/typography/Title';
-import { PlayerCard } from './components/PlayerOverview';
+import { PlayerCard } from './components/PlayerCard.tsx';
 
 
 function App() {
