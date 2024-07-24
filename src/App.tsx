@@ -51,7 +51,11 @@ function App() {
           />
         </Col>
         <Col span={12}>
-          <Controls />
+          <Controls
+            order={sortOrder}
+            onSort={handleSort}
+            onSubmit={handleSubmit}
+          />
         </Col>
       </Row>
 
