@@ -10,4 +10,11 @@ describe("Controls test", () => {
         fireEvent.click(screen.getByText('Sort Asc'));
         expect(onSort).toHaveBeenCalledWith('asc');
     });
+
+    test('calls onSort with "desc" when Sort Desc button is clicked', () => {
+        const onSort = vi.fn();
+        render(<Controls onSort={onSort} onSubmit={() => { }} order="desc" />);
+        fireEvent.click(screen.getByText('Sort Desc'));
+        expect(onSort).toHaveBeenCalledWith('desc');
+    });
 })
