@@ -17,4 +17,11 @@ describe("Controls test", () => {
         fireEvent.click(screen.getByText('Sort Desc'));
         expect(onSort).toHaveBeenCalledWith('desc');
     });
+
+    test('calls onSubmit when Submit button is clicked', () => {
+        const onSubmit = vi.fn();
+        render(<Controls onSort={() => { }} onSubmit={onSubmit} order="asc" />);
+        fireEvent.click(screen.getByText('Submit'));
+        expect(onSubmit).toHaveBeenCalled();
+    });
 })
