@@ -28,4 +28,9 @@ describe('PlayerCard Component', () => {
         expect(container.firstChild).toHaveClass('bg-gray-100');
     });
 
+    test('does not apply active class when isActive is false', () => {
+        const { container } = render(<PlayerCard player={mockPlayer} isActive={false} />);
+        expect(container.firstChild).not.toHaveClass('bg-gray-100');
+    });
+
 })
