@@ -1,30 +1,63 @@
-# React + TypeScript + Vite
+# AOE Card Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Running the Application](#running-the-application)
+- [Testing](#testing)
+  - [Unit and Integration Tests](#unit-and-integration-tests)
+  - [End-to-End Tests](#end-to-end-tests)
+- [Contributing](#contributing)
+- [License](#license)
 
-Currently, two official plugins are available:
+## Introduction
+This project is a simple player management app built using the MERN stack and Ant Design. It allows users to view, sort, and select player cards, and displays detailed information about the selected player.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Fetch and display player data
+- Sort players in ascending or descending order
+- Select a player card to view details
+- Submit button to trigger actions
 
-## Expanding the ESLint configuration
+## Project Structure
+```plaintext
+.
+├── src
+│   ├── components
+│   │   ├── Controls.tsx
+│   │   ├── DetailsCard.tsx
+│   │   ├── PlayerCard.tsx
+│   │__ tests__
+│   │   ├── Controls.test.tsx
+│   │   ├── DetailsCard.test.tsx
+│   │   └── PlayerCard.test.tsx
+│   │   └── App.test.tsx
+│   ├── interfaces
+│   │   └── Player.interface.ts
+│   ├── services
+│   │   └── playerService.ts
+│   ├── App.tsx
+│   └── index.tsx
+├── package.json
+├── tsconfig.json
+└── README.md
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# Installation
+# Prerequisites
+  Node.js (>= 14.x)
+  npm (>= 6.x)
+
+# Steps
+  ```
+  Clone the repository:
+  git clone https://github.com/fahadali503/aoe-game
+  cd my-app
+  Install dependencies:
+  npm install
+  npm run dev
+  ```
+
