@@ -44,4 +44,14 @@ describe('App Component', () => {
         expect(selectedCard).toBeInTheDocument();
     });
 
+    test('sorts player cards in descending order', async () => {
+        render(<App />);
+        await waitFor(() => screen.getByText('John Doe'));
+        fireEvent.click(screen.getByText('Sort Desc'));
+
+        const cards = screen.getAllByText(/Doe|Smith/);
+        expect(cards[0]).toHaveTextContent('John Doe');
+        expect(cards[1]).toHaveTextContent('Jane Smith');
+    });
+
 })
