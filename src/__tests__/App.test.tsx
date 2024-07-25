@@ -54,4 +54,12 @@ describe('App Component', () => {
         expect(cards[1]).toHaveTextContent('Jane Smith');
     });
 
+
+    test('calls handleSubmit on submit button click', async () => {
+        console.log = vi.fn();
+        render(<App />);
+        await waitFor(() => screen.getByText('John Doe'));
+        fireEvent.click(screen.getByText('Submit'));
+        expect(console.log).toHaveBeenCalledWith('Submit clicked');
+    });
 })
