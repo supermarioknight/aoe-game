@@ -1,6 +1,7 @@
 import { describe, expect, test, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { Controls } from '../components/Controls';
+import "@testing-library/jest-dom/vitest"
 
 describe("Controls test", () => {
 
@@ -23,5 +24,11 @@ describe("Controls test", () => {
         render(<Controls onSort={() => { }} onSubmit={onSubmit} order="asc" />);
         fireEvent.click(screen.getByText('Submit'));
         expect(onSubmit).toHaveBeenCalled();
+    });
+
+    test('Sort Asc button has primary type when order is "asc"', () => {
+        render(<Controls onSort={() => { }} onSubmit={() => { }} order="asc" />);
+        const sortAscButton = screen.getByRole('button', { name: 'Sort Asc' });
+        expect(sortAscButton).toHaveClass('ant-btn-primary');
     });
 })
