@@ -14,9 +14,6 @@ const mockPlayers: Player[] = [
     { realName: 'Jane Smith', playerName: 'jane', asset: 'Shield' },
 ];
 
-vi.mock('../services/playerService', () => ({
-    fetchPlayers: vi.fn(),
-}));
 
 describe('App Component', () => {
     beforeEach(() => {
