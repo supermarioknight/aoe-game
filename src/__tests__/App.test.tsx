@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, Mock, test, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/vitest"
 
 import { Player } from "../interfaces/Player.interface";
@@ -27,6 +27,21 @@ describe('App Component', () => {
         render(<App />);
         expect(await screen.findByText('John Doe')).toBeInTheDocument();
         expect(await screen.findByText('Jane Smith')).toBeInTheDocument();
+    });
+
+    test('selects a player card on click', async () => {
+        render(<App />);
+        await waitFor(() => screen.getByText('John Doe'));
+
+        // Click the card to select it
+        fireEvent.click(screen.getByText('John Doe').closest('[id="player-card"]') as HTMLDivElement);
+
+        // Check if the card has the active class
+        const selectedCard = screen.getAllByText('John Doe').find(card =>
+            card.closest('[id="player-card"]')?.classList.contains('bg-gray-100')
+        );
+
+        expect(selectedCard).toBeInTheDocument();
     });
 
 })
