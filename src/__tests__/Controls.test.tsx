@@ -31,4 +31,10 @@ describe("Controls test", () => {
         const sortAscButton = screen.getByRole('button', { name: 'Sort Asc' });
         expect(sortAscButton).toHaveClass('ant-btn-primary');
     });
+
+    test('Sort Desc button has primary type when order is "desc"', () => {
+        render(<Controls onSort={() => { }} onSubmit={() => { }} order="desc" />);
+        const sortDescButton = screen.getByRole('button', { name: 'Sort Desc' });
+        expect(sortDescButton).toHaveClass('ant-btn-primary');
+    })
 })
