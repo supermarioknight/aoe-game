@@ -18,4 +18,10 @@ describe("DetailsCard test", () => {
         expect(screen.getByText('Sword')).toBeInTheDocument();
     });
 
+
+    test('renders empty card when no player is provided', () => {
+        const { container } = render(<DetailsCard player={null} />);
+        const cardBody = container.getElementsByClassName('ant-card-body')[0];
+        expect(cardBody).toBeEmptyDOMElement();
+    });
 })
