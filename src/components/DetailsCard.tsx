@@ -10,9 +10,15 @@ export function DetailsCard({ player }: Props) {
     <Card className="!shadow-md" title="Details" style={{ minHeight: 300 }}>
       {player ? (
         <div>
-          <Paragraph><b>- Real Name:</b> {player.realName}</Paragraph>
-          <Paragraph><b>- Player Name:</b> {player.playerName}</Paragraph>
-          <Paragraph><b>- Asset:</b> {player.asset}</Paragraph>
+          <Paragraph>
+            <b>- Real Name:</b> {player.realName}
+          </Paragraph>
+          <Paragraph>
+            <b>- Player Name:</b> {player.playerName}
+          </Paragraph>
+          <Paragraph>
+            <b>- Asset:</b> {player.asset}
+          </Paragraph>
         </div>
       ) : null}
     </Card>

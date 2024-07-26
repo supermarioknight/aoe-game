@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Player } from './interfaces/Player.interface';
-import { fetchPlayers } from './services/playerService';
+import { fetchPlayers, postSelectedPlayer } from './services/playerService';
 import { DetailsCard } from './components/DetailsCard';
 import { Controls } from './components/Controls';
 import { Col, Row, Skeleton } from 'antd';
@@ -39,7 +39,9 @@ function App() {
   };
 
   const handleSubmit = () => {
-    console.log('Submit clicked');
+    if (selectedPlayer) {
+      postSelectedPlayer(selectedPlayer).then(console.log);
+    }
   };
 
   return (
