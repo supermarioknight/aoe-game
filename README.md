@@ -61,9 +61,9 @@ npm (>= 6.x)
 
 ```
 Clone the repository:
-git clone https://github.com/fahadali503/aoe-game
-cd my-app
+  $ git clone https://github.com/supermarioknight/aoe-game
+  $ cd aoe-game
 Install dependencies:
-npm install
-npm run dev
+  $ npm install
+  $ npm run dev
 ```
