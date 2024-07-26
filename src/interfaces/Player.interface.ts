@@ -1,5 +1,5 @@
 export interface Player {
-    realName: string
-  playerName: string
-  asset: string
+  realName: string;
+  playerName: string;
+  asset: string;
 }

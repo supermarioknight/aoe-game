@@ -1,6 +1,7 @@
 # AOE Card Game
 
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Features](#features)
 - [Project Structure](#project-structure)
@@ -13,15 +14,18 @@
 - [License](#license)
 
 ## Introduction
+
 This project is a simple player management app built using the MERN stack and Ant Design. It allows users to view, sort, and select player cards, and displays detailed information about the selected player.
 
 ## Features
+
 - Fetch and display player data
 - Sort players in ascending or descending order
 - Select a player card to view details
 - Submit button to trigger actions
 
 ## Project Structure
+
 ```plaintext
 .
 ├── src
@@ -47,17 +51,19 @@ This project is a simple player management app built using the MERN stack and An
 ```
 
 # Installation
+
 # Prerequisites
-  Node.js (>= 14.x)
-  npm (>= 6.x)
+
+Node.js (>= 14.x)
+npm (>= 6.x)
 
 # Steps
-  ```
-  Clone the repository:
-  git clone https://github.com/fahadali503/aoe-game
-  cd my-app
-  Install dependencies:
-  npm install
-  npm run dev
-  ```
 
+```
+Clone the repository:
+git clone https://github.com/fahadali503/aoe-game
+cd my-app
+Install dependencies:
+npm install
+npm run dev
+```
